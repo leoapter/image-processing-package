@@ -36,10 +36,15 @@ Usado para especificar como o pacote deve ser construído.
 [Documentação](https://setuptools.readthedocs.io/en/latest/setuptools.html)
 
 # Distribuição do Pacote
-Para subir o pacote, é necessário criar uma distribuição binária ou uma distribuição de código fonte.
+Para subir o pacote, é necessário criar uma distribuição binária(wheel) ou uma distribuição de código fonte(sdist) source distribution).
 As versões mais recentes do `pip` instalam primeiramente a versão binária e usam a distribuição de código fonte apenas se necessário.
 De qualquer forma, iremos criar ambas as distribuições.
 
+## Passos para distribuição do pacote  
+1. Acessar a raiz do projeto
+2. Aplicar os comandos de instalação
+3. Aplicar os comandos de distribuição
+   
 ## Comandos de instalação
 ```bash
 python -m pip install --upgrade pip
@@ -47,12 +52,15 @@ pip install twine
 pip install setuptools
 ```
 
-## Comandos para criar distribuições
+## Comandos de distribuições
 ```bash
 python setup.py sdist bdist_wheel
 ```
 
 # Publicação do Pacote
+Após concluída a distribuição utilizando os comandos de instalação e distribuição, é necessária subir e publicar o pacote no repositório do Pypi.
+É uma boa prática antes de subir diretamente ao Pypim testar no Test Pypi. Uma vez concluido que está tudo ok, subir e publicar no Pypi.
+
 ## Passos para subir o pacote  
 1. Criar conta no Test PyPI
 2. Publicar no Test PyPI
