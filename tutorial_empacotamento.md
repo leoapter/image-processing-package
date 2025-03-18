@@ -62,24 +62,42 @@ Após concluída a distribuição utilizando os comandos de instalação e distr
 É uma boa prática antes de subir diretamente ao Pypim testar no Test Pypi. Uma vez concluido que está tudo ok, subir e publicar no Pypi.
 
 ## Passos para subir o pacote  
-1. Criar conta no Test PyPI
-2. Publicar no Test PyPI
-3. Instalar o pacote usando Test PyPI
+1. Criar conta no Test PyPi
+2. Publicar no Test PyPi
+3. Instalar o pacote usando Test PyPi
 4. Testar pacote
-5. Criar conta no PyPI
-6. Publicar no PyPI
-7. Instalar o pacote usando PyPI
+5. Criar conta no PyPi
+6. Publicar no PyPi
+7. Instalar o pacote usando PyPi
 
-## Comando para publicar no Test PyPI
+# Criando contas no PyPi
+- [Criar conta no Test PyPI](https://test.pypi.org/account/register/)
+- [Criar conta no PyPI](https://pypi.org/account/register/)
+O site vai solicitar nome, e-mail, nome_usuário, senha.
+É recomendado utilizar o mesmo e-mail e nome_usuário do GitHub.
+Após o cadastro será solicitado confirmar o seu-email
+
+## Comando para publicar no Test PyPi
 ```bash
 python -m twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 ```
+O site vai solicitar o seu ususário e senha.
+Após publicar, será enviado o link para verificar se tudo esta ok no site (test.pypi.org/project/nome_do_pacote).
+Estando tudo ok, instale o pacote do Teste Pypi no seu repositório para fins de teste
 
-# Criando contas no PyPI
-- [Criar conta no Test PyPI](https://test.pypi.org/account/register/)
-- [Criar conta no PyPI](https://pypi.org/account/register/)
+# Comando para instalar o pacote do teste PyPi no seu repositório local
+```bash
+python -m pip install package_name
+```
+Estando tudo ok, publique no Pypi
 
-## Comando para instalar o pacote do PyPI
+## Comando para publicar no PyPi
+```bash
+python -m twine upload --repository-url https://upload.pypi.org/legacy/ dist/*
+```
+
+Finalmente instale o pacote do Pypi no seu repositório para fins de teste
+# Comando para instalar o pacote do PyPi no seu repositório local
 ```bash
 python -m pip install package_name
 ```
